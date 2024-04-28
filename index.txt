@@ -1,9 +1,0 @@
-First Try Git Context and second time changes
-Changes Does it work after changes amend 
-Checking the status first 
-
-THese are the new changes
-
-Adding these after new branch 'adding-something-to-indextxt'
-
-It is gonna make merge conflicts
