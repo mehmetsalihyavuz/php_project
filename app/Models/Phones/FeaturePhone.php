@@ -11,7 +11,7 @@ use App\Models\Phones\Model\PhoneModel;
 use App\Models\Phones\Phone;
 use App\Models\Phones\Interface\BatteryInterface;
 
-class FeaturePhone extends Phone {
+class FeaturePhone extends Phone implements MakingCallInterface, SendingMessageInterface, BatteryInterface{
     
     private $brand;
 
@@ -22,24 +22,28 @@ class FeaturePhone extends Phone {
     public function __construct(PhoneBrand $brand, 
                                 PhoneModel $model, 
                                 PhoneColor $color, 
-                                BatteryInterface $batteryInterface,
-                                SendingMessageInterface $sendingMessageInterface,
-                                MakingCallInterface $makingCallInterface) {
-        
+                                ) 
+    {    
         $this->brand = $brand;
         $this->model = $model;
         $this->color = $color;
-        $this->batteryInterface = $batteryInterface;
-        $this->sendingMessage = $sendingMessageInterface;
-        $this->makingCallInterface = $makingCallInterface;
     }
-    public function attributes($brand, $model, $color)
-    {
-        return "This phone is " . $this->brand ."". $this->model ."". $this->color;
+    
+    public function attributes($brand, $model, $color){
+        return "This phone is " . $this->brand->getBrand() . " " . 
+                                  $this->color->getColor() . " " . 
+                                  $this->brand->getBrand() ;
     }
 
-    public function hardware ()
-    {
-        
+    public function makeCall() : string{
+       return "The call is made from" . $this->brand->getBrand() . " " . $this->model->getModel();
+    }
+
+    public function getBattery(): string{
+        return $this->brand->getBrand() . "has " . random_int(1,100);
+    }
+
+    public function sendMessage(): string{
+        return "Sending message from " . $this->brand->getBrand() . $this->model->getModel();
     }
 }
