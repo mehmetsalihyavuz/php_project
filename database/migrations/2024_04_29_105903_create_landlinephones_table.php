@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('landlinephone', function (Blueprint $table) {
             $table->id();
             $table->foreignId('phone_id')->constrained('phone')->cascadeOnDelete();
+            $table->foreignId('landlinephone_color_id')->constrained('color');
+            $table->foreignId('landlinephone_brand_id')->constrained('brand');
+            $table->foreignId('landlinephone_model_id')->constrained('model');
         });
     }
 

@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('featurephone', function (Blueprint $table) {
             $table->id();
             $table->foreignId('phone_id')->constrained('phone')->cascadeOnDelete();
+            $table->foreignId('featurephone_color_id')->constrained('color');
+            $table->foreignId('featurephone_brand_id')->constrained('brand');
+            $table->foreignId('featurephone_model_id')->constrained('model');
         });
     }
 
