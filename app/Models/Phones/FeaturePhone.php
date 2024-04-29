@@ -2,7 +2,6 @@
 
 namespace App\Models\Phones;
 
-
 use App\Models\Phones\Brand\PhoneBrand;
 use App\Models\Phones\Color\PhoneColor;
 use App\Models\Phones\Interface\MakingCallInterface;
@@ -13,11 +12,12 @@ use App\Models\Phones\Interface\BatteryInterface;
 
 class FeaturePhone extends Phone implements MakingCallInterface, SendingMessageInterface, BatteryInterface{
     
-    private $brand;
+    protected $guarded = [];
 
-    private $model;
+    protected $table = "featurephone";
+    protected $model;
 
-    private $color;
+    protected $color;
     
     public function __construct(PhoneBrand $brand, 
                                 PhoneModel $model, 
@@ -32,7 +32,7 @@ class FeaturePhone extends Phone implements MakingCallInterface, SendingMessageI
     public function attributes($brand, $model, $color){
         return "This phone is " . $this->brand->getBrand() . " " . 
                                   $this->color->getColor() . " " . 
-                                  $this->brand->getBrand() ;
+                                  $this->model->getModel() ;
     }
 
     public function makeCall() : string{

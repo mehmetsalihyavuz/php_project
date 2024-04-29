@@ -3,10 +3,16 @@
 
 namespace App\Models\Phones\Model;
 use App\Models\Phones\Phone;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 
-class PhoneModel  {
+class PhoneModel extends Model{
 
+    use HasFactory;
+    protected $guarded = [];
+    
+    protected $table = "model";
     private $model;
 
     public function __construct(Phone $model) {

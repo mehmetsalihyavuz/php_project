@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('colors', function (Blueprint $table) {
+        Schema::create('landlinephone', function (Blueprint $table) {
             $table->id();
-            $table->string('color');
-            $table->timestamps();
+            $table->foreignId('phone_id')->constrained('phone')->cascadeOnDelete();
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('colors');
+        Schema::dropIfExists('landlinephone');
     }
 };

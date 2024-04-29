@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class Phone extends Model{
     
+    protected $guarded = [];
+
+    protected $table = 'phones';
+
     protected $brand;
 
     protected $model;
@@ -13,19 +17,5 @@ abstract class Phone extends Model{
     protected $color;
 
     abstract public function attributes($brand, $model, $color);
-/* 
-    public function featurephone()
-    {
-        return $this->hasMany(FeaturePhone::class);
-    }
 
-    public function landlinephone()
-    {
-        return $this->hasMany(LandlinePhone::class);
-    }
-
-    public function smartphone()
-    {
-        return $this->hasMany(Smartphone::class);
-    } */
 }
