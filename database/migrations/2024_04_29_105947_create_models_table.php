@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('model', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('smartphone_model_id')->constrained('smartphone')->cascadeonDelete();
-            $table->foreignId('featurephone_model_id')->constrained('featurephone')->cascadeonDelete();
-            $table->foreignId('landlinephone_model_id')->constrained('landlinephone')->cascadeonDelete();
+            $table->foreignId('smartphone_model_id')->nullable()->constrained('smartphone')->cascadeonDelete();
+            $table->foreignId('featurephone_model_id')->nullable()->constrained('featurephone')->cascadeonDelete();
+            $table->foreignId('landlinephone_model_id')->nullable()->constrained('landlinephone')->cascadeonDelete();
         });
     }
 
