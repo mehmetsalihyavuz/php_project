@@ -9,7 +9,9 @@ use App\Models\Phones\Interface\MakingCallInterface;
 use App\Models\Phones\Phone;
 use Illuminate\Database\Eloquent\Model;
 
-class LandlinePhone extends Phone implements MakingCallInterface {
+/* implements MakingCallInterface */
+class LandlinePhone extends Phone
+{
 
     protected $guarded = [];
 
@@ -19,23 +21,39 @@ class LandlinePhone extends Phone implements MakingCallInterface {
     protected $model;
 
     protected $color;
-    
-    public function __construct(PhoneBrand $brand,
-                                PhoneModel $model, 
-                                PhoneColor $color) {
-        
-        $this->brand = $brand;
-        $this->model = $model;
-        $this->color = $color;
-    }
-    public function attributes($brand, $model, $color){
-        return "This phone is " . $this->brand->getBrand() . " " . 
-                                  $this->color->getColor() . " " . 
-                                  $this->model->getModel() ;
+
+    /*   public function __construct(PhoneBrand $brand,
+                                  PhoneModel $model, 
+                                  PhoneColor $color) {
+          
+          $this->brand = $brand;
+          $this->model = $model;
+          $this->color = $color;
+      } */
+    public function attributes($brand, $model, $color)
+    {
+        return "This phone is " . $this->brand->getBrand() . " " .
+            $this->color->getColor() . " " .
+            $this->model->getModel();
     }
 
-    public function makeCall() : string{
-        return "The call is made from" . $this->brand->getBrand() . " " 
-                                       . $this->model->getModel();
-     }
+    /*  public function makeCall() : string{
+         return "The call is made from" . $this->brand->getBrand() . " " 
+                                        . $this->model->getModel();
+     } */
+
+    public function brands()
+    {
+        return $this->belongsTo(PhoneBrand::class, "phone_brand_id");
+    }
+
+    public function models()
+    {
+        return $this->belongsTo(PhoneModel::class, "phone_model_id");
+    }
+
+    public function colors()
+    {
+        return $this->belongsTo(PhoneColor::class,"phone_color_id");
+    }
 }

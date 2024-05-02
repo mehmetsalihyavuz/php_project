@@ -20,6 +20,42 @@
         </div>
     </div> --}}
 
-    
+
+    <table cellpadding="50" cellspacing="50">
+        
+        <thead>
+            <th>Brands</th>
+            <th>Models</th>
+            <th>Colors</th>
+        </thead>
+
+        <tbody>
+
+            @foreach ($phones as $phone)
+                <tr>
+                    <td>{{ $phone->brands->name}}</td>
+
+                    <td>{{ $phone->models->name }} </td>
+
+                    <td>{{ $phone->colors->name }} </td>
+
+                   {{--  @can('edituser',$user)
+                        <td><x-button href="/users/{{ $user['id'] }}/edit">Buy</x-button></td>
+                    @endcan
+
+                    @can('edituser',$user)
+                        <td><x-button href="/users/{{ $user['id'] }}/edit">Show Attributes</x-button></td>
+                    @endcan --}}
+
+                </tr>
+            @endforeach
+
+        </tbody>
+
+    </table>
+
+    <div>
+        {{ $phones->links() }} <!--- To display the pagination  -->
+    </div>
 
 </x-layout>

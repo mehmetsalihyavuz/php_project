@@ -8,7 +8,7 @@ abstract class Phone extends Model{
     
     protected $guarded = [];
 
-    protected $table = 'phones';
+    protected $table = 'phone';
 
     protected $brand;
 

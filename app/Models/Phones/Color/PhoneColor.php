@@ -4,27 +4,32 @@
 namespace App\Models\Phones\Color;
 
 use App\Models\Phones\Phone;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Phones\LandlinePhone;
+use App\Models\Phones\FeaturePhone;
+use App\Models\Phones\SmartPhone;
 
 
-class PhoneColor extends Model{
+class PhoneColor extends Model
+{
 
-    use HasFactory;
     protected $guarded = [];
 
     protected $table = "color";
-    private $color;
 
-    public function __construct(Phone $color) {
-        $this->color = $color;
+    public function landlinePhones()
+    {
+        return $this->hasMany(LandlinePhone::class);
     }
 
-    public function getColor(){
-        return $this->color;
+    public function featurePhones()
+    {
+        return $this->hasMany(FeaturePhone::class);
     }
-    
-    public function setColor($color){
-        $this->color = $color;
+
+    public function smartPhones()
+    {
+        return $this->hasMany(SmartPhone::class);
     }
+
 }

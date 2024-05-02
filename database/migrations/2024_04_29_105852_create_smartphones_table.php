@@ -13,11 +13,27 @@ return new class extends Migration
     {
         Schema::create('smartphone', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('phone_id')->constrained('phone')->cascadeOnDelete();  
-            $table->foreignId('smartphone_color_id')->constrained('color');
-            $table->foreignId('smartphone_brand_id')->constrained('brand');
-            $table->foreignId('smartphone_model_id')->constrained('model');
-        });
+
+            $table->string('phone_color_id');
+            $table->string('phone_brand_id');
+            $table->string('phone_model_id');
+
+            $table->foreign('phone_color_id')->references('id')->on('color');
+            $table->foreign('phone_brand_id')->references('id')->on('brand');
+            $table->foreign('phone_model_id')->references('id')->on('model');
+
+            $table->timestamps();
+
+            
+        });  
+
+       /*  Schema::create('smartphone', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(App\Models\Phones\Brand\PhoneBrand::class);
+            $table->foreignIdFor(App\Models\Phones\Color\PhoneColor::class);
+            $table->foreignIdFor(App\Models\Phones\Model\PhoneModel::class);
+            $table->timestamps();
+        }); */
     }
 
     /**

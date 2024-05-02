@@ -6,23 +6,29 @@ namespace App\Models\Phones\Brand;
 use App\Models\Phones\Phone;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Phones\LandlinePhone;
+use App\Models\Phones\FeaturePhone;
+use App\Models\Phones\SmartPhone;
 
+class PhoneBrand extends Model
+{
 
-class PhoneBrand extends Model{
-
-    use HasFactory;
     protected $guarded = [];
-    protected $table = "brand";
-    private $brand;
 
-    public function __construct(Phone $brand) {
-        $this->brand = $brand;
+    protected $table = "brand";
+   
+    public function landlinePhones()
+    {
+        return $this->hasMany(LandlinePhone::class);
     }
-    public function getBrand(){
-        return $this->brand;
+
+    public function featurePhones()
+    {
+        return $this->hasMany(FeaturePhone::class);
     }
-    
-    public function setBrand($brand){
-        $this->brand = $brand;
+
+    public function smartPhones()
+    {
+        return $this->hasMany(SmartPhone::class);
     }
 }
