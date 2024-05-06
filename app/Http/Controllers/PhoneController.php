@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Phones\Color\PhoneColor;
 use App\Models\Phones\SmartPhone;
-use Illuminate\Http\Request;
+use App\Models\Phones\FeaturePhone;
+use App\Models\Phones\LandlinePhone;
 
 class PhoneController extends Controller
 {
@@ -16,14 +16,23 @@ class PhoneController extends Controller
         dump($phone->brands->name);
     } */
 
-    /* $phones = SmartPhone::all()->paginate(5); */
+   /*  $phones = SmartPhone::paginate(); */
 
-    $phones = SmartPhone::paginate(2);
-    /* 
-        return view("phones.index",[
-            "phones"=> $phones
-        ]); */
+        /* $smartphones = SmartPhone::paginate(2);
+        $landlinephones = LandlinePhone::paginate(2);
+        $featurephones = FeaturePhone::paginate(2);    */
+/* 
+        $smartphones = SmartPhone::all();
+        $landlinephones = LandlinePhone::all();
+        $featurephones = FeaturePhone::all();    
+ */
+        
+        /* $phones = [
+            "smartphones"=> $smartphones,
+            "landlinephones"=> $landlinephones,
+            "featurephones"=> $featurephones
+        ]; */   
 
-        return view("phones.index", compact("phones"));
+        return view("phones.index");
     }
 }

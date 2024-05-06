@@ -5,42 +5,40 @@ namespace App\Models\Phones;
 use App\Models\Phones\Brand\PhoneBrand;
 use App\Models\Phones\Color\PhoneColor;
 use App\Models\Phones\Model\PhoneModel;
+use App\Models\Phones\Attributes\PhoneAttributes;
 use App\Models\Phones\Interface\MakingCallInterface;
 use App\Models\Phones\Phone;
-use Illuminate\Database\Eloquent\Model;
 
-/* implements MakingCallInterface */
-class LandlinePhone extends Phone
+class LandlinePhone extends Phone implements MakingCallInterface
 {
 
     protected $guarded = [];
 
     protected $table = "landlinephone";
+    
     protected $brand;
 
     protected $model;
 
     protected $color;
 
-    /*   public function __construct(PhoneBrand $brand,
-                                  PhoneModel $model, 
-                                  PhoneColor $color) {
-          
-          $this->brand = $brand;
-          $this->model = $model;
-          $this->color = $color;
-      } */
     public function attributes($brand, $model, $color)
     {
-        return "This phone is " . $this->brand->getBrand() . " " .
-            $this->color->getColor() . " " .
-            $this->model->getModel();
+        $brand = $this->brands->name;
+        $model = $this->models->name;
+        $color = $this->colors->name;
+
+        $attr = new PhoneAttributes;
+    
+        $at = $attr->attributes($brand,$model,$color);
+
+        return $at;
     }
 
-    /*  public function makeCall() : string{
-         return "The call is made from" . $this->brand->getBrand() . " " 
-                                        . $this->model->getModel();
-     } */
+    public function makeCall() : string{
+         return "The call is made from " . $this->brands->name . " " 
+                                         . $this->models->name;
+    }
 
     public function brands()
     {

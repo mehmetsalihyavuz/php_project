@@ -6,56 +6,50 @@ use App\Models\Phones\Brand\PhoneBrand;
 use App\Models\Phones\Color\PhoneColor;
 use App\Models\Phones\Interface\MakingCallInterface;
 use App\Models\Phones\Interface\SendingMessageInterface;
+use App\Models\Phones\Attributes\PhoneAttributes;
 use App\Models\Phones\Model\PhoneModel;
 use App\Models\Phones\Phone;
 use App\Models\Phones\Interface\BatteryInterface;
 
-/*
-implements MakingCallInterface, SendingMessageInterface, BatteryInterface
-*/
-
-class FeaturePhone extends Phone
+class FeaturePhone extends Phone implements SendingMessageInterface, MakingCallInterface, BatteryInterface 
 {
 
     protected $guarded = [];
 
     protected $table = "featurephone";
+
     protected $model;
 
     protected $brand;
+    
     protected $color;
-
-    /*  public function __construct(PhoneBrand $brand, 
-                                 PhoneModel $model, 
-                                 PhoneColor $color, 
-                                 ) 
-     {    
-         $this->brand = $brand;
-         $this->model = $model;
-         $this->color = $color;
-     } */
 
     public function attributes($brand, $model, $color)
     {
-        return "This phone is " . $this->brand->getBrand() . " " .
-                                  $this->color->getColor() . " " .
-                                  $this->model->getModel();
+        $brand = $this->brands->name;
+        $model = $this->models->name;
+        $color = $this->colors->name;
+
+        $attr = new PhoneAttributes;
+    
+        $at = $attr->attributes($brand,$model,$color);
+
+        return $at;
+    }
+   
+    public function makeCall() : string{
+        return "The call is made from " . $this->brand = $this->brands->name. " " 
+                                        . $this->model = $this->models->name;
     }
 
-    /*  public function makeCall() : string{
-        return "The call is made from" . $this->brand->getBrand() 
-                                       . " " 
-                                       . $this->model->getModel();
-     }
-
      public function getBattery(): string{
-         return $this->brand->getBrand() . "has " . random_int(1,100);
+         return $this->brands->name ." ". $this->models->name. "has " . random_int(1,5) . "of 5" ;
      }
 
      public function sendMessage(): string{
-         return "Sending message from " . $this->brand->getBrand() 
-                                        . $this->model->getModel();
-     }  */
+         return "Sending message from " . $this->brands->name 
+                                        . $this->models->name;
+     } 
 
     public function brands()
     {
