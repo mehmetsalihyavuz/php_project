@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Phones\FeaturePhone;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class FeaturePhoneController extends Controller
 {
@@ -22,7 +23,7 @@ class FeaturePhoneController extends Controller
         ]);
     }
 
-    public function buy (FeaturePhone $featurephone) {
+    public function buy (FeaturePhone $featurephone, User $user) {
         dd('Buying the FeaturePhone');
     }
 }

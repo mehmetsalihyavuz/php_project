@@ -10,6 +10,8 @@ use App\Models\Phones\Interface\SendingMessageInterface;
 use App\Models\Phones\Attributes\PhoneAttributes;
 use App\Models\Phones\Model\PhoneModel;
 use App\Models\Phones\Phone;
+use App\Models\Phones\Purchase\PurchasePhone;
+use App\Models\User;
 
 class SmartPhone extends Phone implements SendingMessageInterface, MakingCallInterface, BatteryInterface 
 {
@@ -23,6 +25,8 @@ class SmartPhone extends Phone implements SendingMessageInterface, MakingCallInt
     protected $model;
 
     protected $color;
+
+    private $salary;
 
     public function attributes($brand, $model, $color)
     {
@@ -40,12 +44,23 @@ class SmartPhone extends Phone implements SendingMessageInterface, MakingCallInt
     public function makeCall(): string
     {
         return "The call is made from " . $this->brands->name . " "
-                                       . $this->models->name;
+                                        . $this->models->name;
+    }
+
+    public function purchasePhone(User $user, array $attributes, PurchasePhone $purchasePhone){
+
+        $result = $purchasePhone->purchaseSmartPhone($this->users->id, [
+            $this->brands->id,
+            $this->models->id,
+            $this->colors->id
+        ]);
+        
+        return $result;
     }
 
     public function getBattery(): string
     {
-        return $this->brands->name . "has " . random_int(1, 100);
+        return $this->brands->name . "has " . random_int(1, 100) . " % battery";
     }
 
     public function sendMessage(): string
@@ -67,5 +82,9 @@ class SmartPhone extends Phone implements SendingMessageInterface, MakingCallInt
     public function colors()
     {
         return $this->belongsTo(PhoneColor::class,"phone_color_id");
+    }
+
+    public function users() {
+        return $this->belongsTo(User::class, "user_id");
     }
 }

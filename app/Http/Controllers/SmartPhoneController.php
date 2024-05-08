@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Phones\SmartPhone;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class SmartPhoneController extends Controller
 {
@@ -24,9 +25,7 @@ class SmartPhoneController extends Controller
         ]);
     }
 
-    public function buy (SmartPhone $smartphone) {
-        return view('phones.smarthpone.buy', [
-            "smartphone" => $smartphone
-        ]);
+    public function buy (SmartPhone $smartphone, User $user) {
+        dd($smartphone);
     }
 }

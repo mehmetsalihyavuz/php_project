@@ -12,28 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('smartphone', function (Blueprint $table) {
+            
             $table->id();
+            $table->unsignedBigInteger('price');
 
             $table->string('phone_color_id');
             $table->string('phone_brand_id');
             $table->string('phone_model_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('phone_color_id')->references('id')->on('color');
             $table->foreign('phone_brand_id')->references('id')->on('brand');
             $table->foreign('phone_model_id')->references('id')->on('model');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
-
-            
         });  
-
-       /*  Schema::create('smartphone', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(App\Models\Phones\Brand\PhoneBrand::class);
-            $table->foreignIdFor(App\Models\Phones\Color\PhoneColor::class);
-            $table->foreignIdFor(App\Models\Phones\Model\PhoneModel::class);
-            $table->timestamps();
-        }); */
     }
 
     /**

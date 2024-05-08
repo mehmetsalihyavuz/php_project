@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 abstract class Phone extends Model{
     
     protected $guarded = [];
-
-    protected $table = 'phone';
-
+    
     protected $brand;
 
     protected $model;

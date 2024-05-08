@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Job;
+use App\Models\Phones\Brand\PhoneBrand;
 use App\Models\Phones\Color\PhoneColor;
+use App\Models\Phones\Model\PhoneModel;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,6 +27,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
         ]);
         
-        $this->call(JobSeeder::class);  /* to call JobSeeder */
+        $this->call(JobSeeder::class);
+        $this->call([PhoneModelSeeder::class,
+                     PhoneColorSeeder::class,
+                     PhoneBrandSeeder::class,
+                     FeaturePhoneSeeder::class,
+                     LandlinePhoneSeeder::class,
+                     SmartPhoneSeeder::class]);
+        
+       
     }
 }
