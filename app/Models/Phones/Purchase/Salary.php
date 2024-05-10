@@ -6,28 +6,36 @@ use App\Models\Phones\SmartPhone;
 use App\Models\Phones\LandlinePhone;
 use App\Models\Phones\FeaturePhone;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Auth;
 
 class Salary
 {
-    private $salary;
-
-    private $price;
-
-    private $result;
-
-    protected $balance;
-
-    public function __construct($salary, $price)
+    public function calculateSalary($currentSalary, $phonePrice, $user)
     {
-        if ($salary > $price){
+        $result = $currentSalary - $phonePrice;
 
-            $this->balance = $salary - $price;
+        if ($result < 0) {
+            return false;
+        }
 
-            $this->result = $this->balance;
+        $newSalary = $currentSalary - $phonePrice;
 
-        } 
-        
-        else 
+        $this->updateSalary($user, $newSalary);
+
+        return $newSalary;
+    }
+
+    public function updateSalary($user, $newSalary)
+    {
+
+        if ($newSalary < 0) {
+            return false;
+        }
+
+        $user->update([
+            'salary' => $newSalary
+        ]);
+
+        return true;
     }
 }

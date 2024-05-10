@@ -57,6 +57,9 @@ Route::get('/phones/smartphone/{smartphone}', [SmartPhoneController::class, 'sho
 Route::get('/phones/landlinephone/{landlinephone}', [LandlinePhoneController::class, 'show'])->name(('landlinephone.show'));
 Route::get('/phones/featurephone/{featurephone}', [FeaturePhoneController::class, 'show'])->name('featurephone.show');
 
-Route::post('/phones/smartphone/{smartphone}', [SmartPhoneController::class, 'buy'])->name(('smartphone.buy'));
-Route::post('/phones/landlinephone/{landlinephone}', [LandlinePhoneController::class, 'buy'])->name(('landlinephone.buy'));
-Route::post('/phones/featurephone/{featurephone}', [FeaturePhoneController::class, 'buy'])->name('featurephone.buy');
+Route::patch('/phones/smartphone/{smartphone}', [SmartPhoneController::class, 'buy'])->name(('smartphone.buy'))
+           ->middleware('auth');
+Route::patch('/phones/landlinephone/{landlinephone}', [LandlinePhoneController::class, 'buy'])->name(('landlinephone.buy'))
+           ->middleware('auth');
+Route::patch('/phones/featurephone/{featurephone}', [FeaturePhoneController::class, 'buy'])->name('featurephone.buy')
+           ->middleware('auth');

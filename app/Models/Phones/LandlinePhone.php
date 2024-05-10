@@ -8,8 +8,6 @@ use App\Models\Phones\Model\PhoneModel;
 use App\Models\Phones\Attributes\PhoneAttributes;
 use App\Models\Phones\Interface\MakingCallInterface;
 use App\Models\Phones\Phone;
-use App\Models\Phones\Purchase\PurchasePhone;
-use App\Models\Phones\Purchase\Salary;
 use App\Models\User;
 
 class LandlinePhone extends Phone implements MakingCallInterface
@@ -40,27 +38,6 @@ class LandlinePhone extends Phone implements MakingCallInterface
         $at = $attr->attributes($brand, $model, $color);
 
         return $at;
-    }
-
-    public function purchasePhone(User $user, array $attributes, )
-    {
-        $this->salary = $user->salary;
-
-        $salarycheck = new Salary($this->salary, $this->price);
-
-        if (!$salarycheck) {
-
-            $purchasePhone = new PurchasePhone;
-
-            $result = $purchasePhone->purchaseLandlinePhone($this->users->id, [
-                $this->brands->id,
-                $this->models->id,
-                $this->colors->id,
-            ]);
-
-            return $result;
-
-        }
     }
 
     public function makeCall(): string

@@ -10,7 +10,6 @@ use App\Models\Phones\Attributes\PhoneAttributes;
 use App\Models\Phones\Model\PhoneModel;
 use App\Models\Phones\Phone;
 use App\Models\Phones\Interface\BatteryInterface;
-use App\Models\Phones\Purchase\PurchasePhone;
 use App\Models\User;
 
 class FeaturePhone extends Phone implements SendingMessageInterface, MakingCallInterface, BatteryInterface 
@@ -40,17 +39,6 @@ class FeaturePhone extends Phone implements SendingMessageInterface, MakingCallI
 
         return $at;
     }
-   
-    public function purchasePhone(User $user, array $attributes, PurchasePhone $purchasePhone){
-        
-        $result = $purchasePhone->purchaseFeaturePhone($this->users->id, [
-            $this->brands->id,
-            $this->models->id,
-            $this->colors->id
-        ]);
-
-        return $result;
-    }
 
     public function makeCall() : string{
         return "The call is made from " . $this->brands->name. " " 
@@ -59,12 +47,12 @@ class FeaturePhone extends Phone implements SendingMessageInterface, MakingCallI
 
     public function getBattery(): string{
          return $this->brands->name ." ". $this->models->name. "has " . random_int(1,5) . "of 5" ;
-     }
+    }
 
     public function sendMessage(): string{
          return "Sending message from " . $this->brands->name 
                                         . $this->models->name;
-     } 
+    } 
 
     public function brands()
     {

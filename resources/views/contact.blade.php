@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        Contact Page
+        Users' Phone 
     </x-slot:heading>
-    <h1>Hello from the Contact page</h1>
+    <h1></h1>
 </x-layout>
