@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Markdown;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Job;
 
@@ -28,8 +29,8 @@ class JobPosted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Job Posted',
-            from : 'job_info@example.com'
+            subject: $this->job->title,
+            from : 'job_info@example.com' 
         );
     }
 

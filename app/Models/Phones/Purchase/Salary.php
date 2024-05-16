@@ -2,12 +2,6 @@
 
 namespace App\Models\Phones\Purchase;
 
-use App\Models\Phones\SmartPhone;
-use App\Models\Phones\LandlinePhone;
-use App\Models\Phones\FeaturePhone;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-
 class Salary
 {
     public function calculateSalary($currentSalary, $phonePrice, $user)

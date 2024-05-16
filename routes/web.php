@@ -9,13 +9,19 @@ use App\Http\Controllers\SmartPhoneController;
 use App\Http\Controllers\LandlinePhoneController;
 use App\Http\Controllers\FeaturePhoneController;
 use App\Http\Controllers\ContactPageController;
+use App\Notifications\JobPostedNotification;
 use Illuminate\Support\Facades\Route;
 
 Route::get('test', function () {
 
-    \App\Jobs\TranslateJob::dispatch();
+    $user = \App\Models\User::find(1);
 
-    return 'Done';
+    $job = \App\Models\Job::find(150);
+
+    // $user->notify(new JobPostedNotification($job));
+    $arr=['salih@test.com','deneme@test.com'];
+    Notification::route('mail',$arr)->notify(new JobPostedNotification($job));
+
 });
 
 Route::view('/', 'home');
@@ -24,6 +30,7 @@ Route::view('/', 'home');
 Route::get('/jobs', [JobController::class, 'index']);
 Route::get('/jobs/create', [JobController::class, 'create']);
 Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
+
 Route::get('/jobs/{job}', [JobController::class, 'show']);
 
 Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
@@ -69,6 +76,6 @@ Route::patch('/phones/landlinephone/{landlinephone}', [LandlinePhoneController::
 Route::patch('/phones/featurephone/{featurephone}', [FeaturePhoneController::class, 'buy'])->name('featurephone.buy')
            ->middleware('auth');
 
-Route::get('/contact/smartphone', [ContactPageController::class, 'smartphone'])->name('my-smartphone');
-Route::get('/contact/featurephone', [ContactPageController::class, 'featurephone'])->name('my-featurephone');
-Route::get('/contact/landlinephone', [ContactPageController::class, 'landlinephone'])->name('my-landlinephone');
+Route::get('/contact/smartphone/{user}', [ContactPageController::class, 'smartphone'])->name('my-smartphone');
+Route::get('/contact/featurephone/{user}', [ContactPageController::class, 'featurephone'])->name('my-featurephone');
+Route::get('/contact/landlinephone/{user}', [ContactPageController::class, 'landlinephone'])->name('my-landlinephone');

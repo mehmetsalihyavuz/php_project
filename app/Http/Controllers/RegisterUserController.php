@@ -17,8 +17,7 @@ class RegisterUserController extends Controller
         return view('auth.register');
     }
     public function store(){
-        // validate
-
+    
         $attributes = request()->validate([
             'username' => ['required','string'],
             'first_name'=> ['required','string'],

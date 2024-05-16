@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Job;
+use App\Notifications\JobPostedNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illumniate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\JobPosted;
+use Illuminate\Support\Facades\Notification;
 
 class JobController extends Controller
 {
@@ -22,6 +23,9 @@ class JobController extends Controller
     /* $jobs = Job::with('employer')->cursorPaginate(3);  */
     /* $jobs = Job::all(); causes lazy loading*/
 
+    public function __construct(public User $user)
+    {
+    }
     public function index()
     {
         $jobs = Job::with('employer')->latest()->simplePaginate(3);
@@ -43,6 +47,8 @@ class JobController extends Controller
 
     public function store()
     {
+        $user = Auth::user();
+
         request()->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required']
@@ -53,14 +59,17 @@ class JobController extends Controller
             'salary' => request('salary'),
             'employer_id' => 1
         ]);
-/* 
-        Mail::to($job->employer->user)->send(
+
+        /* Mail::to($job->employer->user)->send(
             new JobPosted($job)
         ); */
 
-        Mail::to($job->employer->user)->queue(
+        /* Mail::to($job->employer->user)->queue(
             new JobPosted($job)
-        );
+        ); */
+
+        Notification::route('mail', $user->email)->notify(new JobPostedNotification($job));
+
 
         return redirect('/jobs');
     }

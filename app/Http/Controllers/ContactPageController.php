@@ -6,44 +6,56 @@ use App\Models\Phones\FeaturePhone;
 use App\Models\Phones\LandlinePhone;
 use App\Models\Phones\SmartPhone;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Action;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class ContactPageController extends Controller
 {
+
     public $user;
-
-    public $featurephone;
-
-    public $landlinephone;
-
-    public $smartphone;
 
     public function __construct()
     {
+        /* $this->user = Auth::user(); */
         $this->user = Auth::user();
     }
 
     public function index()
     {
 
-        return view('contact', [
-            "user" => $this->user,
+        return view('contact.contact', [
+            "user" => $this->user
         ]);
     }
 
     public function smartphone()
     {
-        
-        return $this->smartphone = SmartPhone::where('user_id', $this->user->id)->get();
+        $smartphone = SmartPhone::where('user_id', $this->user->id)->paginate(5);
+
+        return view('contact.smartphone', [
+            "smartphone" => $smartphone,
+            "user" => $this->user
+        ]);
     }
 
     public function featurephone()
     {
-        return $this->featurephone = FeaturePhone::where('user_id', $this->user->id)->get();
-    }
+        $featurephone = FeaturePhone::where('user_id', $this->user->id)->paginate(5);
 
+        return view('contact.featurephone', [
+            "featurephone" => $featurephone, 
+            "user" => $this->user
+        ]);
+
+    }
     public function landlinephone()
     {
-        return $this->landlinephone = LandlinePhone::where('user_id', $this->user->id)->get();
+
+        $landlinephone = LandlinePhone::where('user_id', $this->user->id)->paginate(5);
+        return view('contact.landlinephone', [
+            "landlinephone" => $landlinephone,
+            "user" => $this->user
+        ]);
     }
 }
