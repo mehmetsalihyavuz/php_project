@@ -12,18 +12,6 @@ use App\Http\Controllers\ContactPageController;
 use App\Notifications\JobPostedNotification;
 use Illuminate\Support\Facades\Route;
 
-Route::get('test', function () {
-
-    $user = \App\Models\User::find(1);
-
-    $job = \App\Models\Job::find(150);
-
-    // $user->notify(new JobPostedNotification($job));
-    $arr=['salih@test.com','deneme@test.com'];
-    Notification::route('mail',$arr)->notify(new JobPostedNotification($job));
-
-});
-
 Route::view('/', 'home');
 
 // Jobs

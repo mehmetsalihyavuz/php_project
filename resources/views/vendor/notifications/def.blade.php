@@ -2,21 +2,21 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="{{ asset('css/styles.css')}}">
+    
 </head>
 
 <body>
     <!-- Header of the email -->
     <div class="header">
-        <h2>Job Information</h2>
+        <h2>Licenses That Will Expire Soon</h2>
     </div>
 
     <!-- Content of the email -->
     <div class="content">
         <table>
             <tr>
-                <th>Attribute</th>
-                <th>Value</th>
+                <th>Company Name</th>
+                <th>Expire Date</th>
             </tr>
             <tr>
                 <td>Job Title</td>
@@ -31,16 +31,13 @@
                 <td>{{ $job->employer->user->username }}</td>
             </tr>
         </table>
-
-        <!-- Additional content or call-to-action button -->
-        <p>Thank you for your attention!</p>
-        <a href="#" class="button">Visit our website</a>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 BNTPRO. All rights reserved.</p>
     </div>
+    
 </body>
 
 </html>

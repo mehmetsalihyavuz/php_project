@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Job;
+use App\Notifications\InvoicePaid;
 use App\Notifications\JobPostedNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,7 +70,6 @@ class JobController extends Controller
         ); */
 
         Notification::route('mail', $user->email)->notify(new JobPostedNotification($job));
-
 
         return redirect('/jobs');
     }

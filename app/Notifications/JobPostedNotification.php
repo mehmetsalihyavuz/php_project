@@ -40,36 +40,16 @@ class JobPostedNotification extends Notification implements ShouldQueue
      */
     public function toMail(object $notifiable): MailMessage
     {
-        /* return (new MailMessage)
-                    ->greeting('Hey!')
-                    ->line('The introduction to the notification.')
-                    ->subject('About' . $this->job->title)
-                    ->markdown('mail.jobpostednew') 
-                    ->view('mail.jobpostednew')
-                    
-                    ->subject('About ' . $this->job->title)
-                    ->action('Notification Action', url('/jobs/'.$this->job->id))
-                    ->line('Thank you for using our application!'); */
-
         $job = $this->job;
-
-        /* $res = (new MailMessage)
-                ->subject('About '. $this->job->title)
-                ->action('View Job',url('/jobs/'.$this->job->id))
-                ->line('Thank You')
-                ->level('error');
         
-        $res->markdown('vendor.notifications.email'); */
-
         $res = (new MailMessage)
                 ->subject('About '. $job->title)
                 ->action('View Job',url('/jobs/'.$job->id))
-                ->line('Thank You')
-                ->level('error');
-        
-        /* $res->markdown('vendor.notifications.email', ['job'=>$job]); */
+                ->theme('try-styles')
+                /* ->line('Thank You')
+                ->level('error')*/;
 
-        $res->markdown('vendor.notifications.first', ['job'=>$job]);
+        $res->markdown('vendor.notifications.try', ['job'=>$job]);
 
         return $res;
     }
