@@ -21,8 +21,8 @@ class JobPostedNotification extends Notification implements ShouldQueue
      * Create a new notification instance.
      */
     public function __construct(Job $job)
-    {   
-      $this->job = $job;
+    {
+        $this->job = $job;
     }
 
     /**
@@ -41,17 +41,59 @@ class JobPostedNotification extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         $job = $this->job;
+
+        $url = url('https://www.bntpro.com/');
+
+        // Verification Email
+
+        /* $res = (new MailMessage)
+            ->subject('About '. $job->title)
+
+            ->theme('verify-styles');
+
+        $res->markdown('vendor.notifications.verify', [
+            'job' => $job,
+            'url' => $url,
+            
+        ]);  */
         
+
+        // Licences That Expire Table
+
         $res = (new MailMessage)
-                ->subject('About '. $job->title)
-                ->action('View Job',url('/jobs/'.$job->id))
-                ->theme('try-styles')
-                /* ->line('Thank You')
-                ->level('error')*/;
+        ->subject('Licences That Will Expire Soon') 
+        /* ->theme('mail-styles') */;
 
-        $res->markdown('vendor.notifications.try', ['job'=>$job]);
+        /*  $res->markdown('vendor.notifications.license-that-expire', [
+            'job' => $job,
+            'url' => $url,
 
+        ]);  */
+
+        $res->markdown('vendor.notifications.def', [
+            'job' => $job,
+            'url' => $url,
+        ]); 
+        
         return $res;
+
+        /* $res = (new MailMessage)
+        ->subject('Licences That Will Expire Soon')  */
+        /* ->theme('mail-styles') */;
+
+        /*  $res->markdown('vendor.notifications.license-that-expire', [
+            'job' => $job,
+            'url' => $url,
+
+        ]);  */
+
+        /* $res->markdown('vendor.notifications.abc', [
+            'job' => $job,
+            'url' => $url,
+        ]); 
+        
+        return $res;  */
+
     }
 
     /**

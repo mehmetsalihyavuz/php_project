@@ -1,0 +1,329 @@
+/* .proton-body {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.proton-wrapper {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: #222;
+    background: #f2f2fd;
+    background: #d3d3d3;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'Baloo 2', 'Open Sans', 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Arial, monospace, sans-serif;
+}
+
+.proton-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0px;
+    width: 640px;
+    max-width: 90%;
+    margin: 100px auto;
+    box-shadow: 0px 20px 48px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.proton-table tr {
+    background: #ffffff;
+}
+
+.proton-table td,
+.proton-table th {
+    border: 0px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.proton-table tr td {
+    padding: 0px 40px;
+    box-sizing: border-box;
+}
+
+.proton-margin {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    height: 40px;         
+    padding-bottom: 0px;
+    box-sizing: border-box;
+}
+
+.proton-divider {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0px;
+    border-top: 2px solid #f2f2fd;
+}
+
+.logo {
+    width: 150px;
+}
+
+.proton-table h1,
+.proton-table h2{
+    float: left;
+    width: 100%;
+    margin: 0px 0px 20px 0px !important;
+    padding: 0px;
+}
+
+.proton-table h1 {
+    font-size: 33px;
+}
+
+.proton-table h2 {
+    font-size: 26px;
+}
+
+.proton-table p {
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    margin: 0px 0px 20px 0px !important;
+}
+
+.proton-table a {
+    color: #6d49fc;
+    font-weight: bold;
+}
+
+.proton-table a.proton-link {
+    display: inline-block;
+    width: auto !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+.proton-table img,
+.proton-table a img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: 0px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.proton-table a.proton-button {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 15px 40px;
+    margin: 20px 0px;
+    color: #ffffff !important;
+    background: #e90303 !important;
+    border-radius: 10px;
+    text-decoration: none;
+    outline: none;
+}
+
+.proton-table a.proton-button:hover {
+    color: #ffffff !important;
+    background: #55cc55 !important;
+}
+
+.logo {
+    width: 150px;
+}
+
+.body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #cc3333; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 80%; 
+    max-width: 800px; 
+    text-align: center;
+    background: linear-gradient(45deg, #333333, #000000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family:'Times New Roman', Times, serif;
+}
+
+.content {
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #666666, #424242); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+th {
+    background: linear-gradient(45deg, #cc0000, #990000); 
+    color: #fff;
+    font-weight: bold;
+}
+
+td {
+    background: #ffffff; 
+    color: #fff;
+}
+
+tr:nth-child(even) td {
+    background: linear-gradient(45deg, #999999, #666666); 
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #424242; 
+} */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a1a1a1;
+}
+
+.second-body {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    box-sizing:content-box;
+    color: #222;
+    background: #f2f2fd;
+/*     background: #d3d3d3;
+ */  font-size: 18px;
+    font-weight: normal;
+    font-family: 'Baloo 2', 'Open Sans', 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Arial, monospace, sans-serif;
+}
+
+.content {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0px;
+    width: 640px;
+    max-width: 90%;
+    overflow: hidden;
+}
+
+.content logo-container{
+    text-align: center;
+    padding: 20px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0px;
+    width: 640px;
+    max-width: 90%;
+    overflow: hidden;
+}
+
+.logo {
+    width: 150px;
+}
+
+.logo-divider {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0px;
+    border-top: 2px solid #f2f2fd;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 80%; 
+    max-width: 800px; 
+    text-align: center;
+    background: linear-gradient(45deg, #333333, #000000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family:'Times New Roman', Times, serif;
+}
+
+.content {
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #666666, #424242); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+th {
+    background: linear-gradient(45deg, #cc0000, #990000); 
+    color: #fff;
+    font-weight: bold;
+}
+
+td {
+    background: linear-gradient(45deg, #505050, #333333); 
+    color: #fff;
+}
+
+tr:nth-child(even) td {
+    background: linear-gradient(45deg, #999999, #666666); 
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #424242; 
+}

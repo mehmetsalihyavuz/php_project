@@ -1,27 +1,44 @@
-<x-mail::layout>
+{{-- <x-mail::layout> --}}
 {{-- Header --}}
-<x-slot:header>
+{{-- <x-slot:header>
 <x-mail::header :url="config('app.url')">
 {{ config('app.name') }}
 </x-mail::header>
 </x-slot:header>
-
+ --}}
 {{-- Body --}}
-{{ $slot }}
+{{-- {{ $slot }} --}}
 
 {{-- Subcopy --}}
-@isset($subcopy)
+{{-- @isset($subcopy)
 <x-slot:subcopy>
 <x-mail::subcopy>
 {{ $subcopy }}
 </x-mail::subcopy>
 </x-slot:subcopy>
-@endisset
+@endisset --}}
 
 {{-- Footer --}}
-<x-slot:footer>
+{{-- <x-slot:footer>
 <x-mail::footer>
 © {{ date('Y') }} {{ config('app.name') }}. {{ __('All rights reserved.') }}
 </x-mail::footer>
 </x-slot:footer>
+</x-mail::layout> --}}
+
+
+<x-mail::layout>
+
+    {{-- <x-slot:table>
+        <x-mail::table>
+
+        </x-mail::table>
+    </x-slot:table>
+
+    <x-slot:footer>
+        <x-mail::footer>
+
+        </x-mail::footer>
+    </x-slot:footer> --}}
+
 </x-mail::layout>

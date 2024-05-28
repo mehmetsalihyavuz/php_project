@@ -32,7 +32,7 @@ class SmartPhone extends Phone implements SendingMessageInterface, MakingCallInt
         $brand = $this->brands->name;
         $model = $this->models->name;
         $color = $this->colors->name;
-
+        
         $attr = new PhoneAttributes;
     
         $at = $attr->attributes($brand,$model,$color);

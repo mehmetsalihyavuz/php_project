@@ -1,76 +1,275 @@
+/* body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 80%; 
+    max-width: 800px; 
+    text-align: center;
+    background: linear-gradient(45deg, #d32f2f, #212121);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #616161, #424242);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    color: #fff;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 8px;
-    overflow: hidden;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-th,
-td {
+th, td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid #e0e0e0;
 }
 
 th {
-    background: linear-gradient(45deg, #555, #444);
+    background: linear-gradient(45deg, #212121, #000);
     color: #fff;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
-tr:nth-child(even) {
-    background-color: #f8f8f8;
+td {
+    background: linear-gradient(45deg, #d32f2f, #c62828);
+    color: #fff;
 }
 
-tr:hover {
+tr:nth-child(even) td {
+    background: linear-gradient(45deg, #616161, #757575);
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #424242;
+} */
+
+/* .body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
 }
 
-.header {
+.logo-container {
     text-align: center;
-    background: linear-gradient(45deg, #aa0000, #cc0000);
-    color: #fff;
+    padding: 20px;
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 80%; 
+    max-width: 800px; 
+    text-align: center;
+    background: linear-gradient(45deg, #d32f2f, #212121);
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .content {
     padding: 20px;
     border-radius: 8px;
-    background-color: #fff;
+    background: linear-gradient(45deg, #616161, #424242);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* .button {
-    display: inline-block;
-    background-color: #aa0000;
+    margin: 20px;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+th {
+    background: linear-gradient(45deg, #212121, #000);
+    color: #fff;
     font-weight: bold;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #cc0000;
-} */
-
-/* Additional styles for the title */
-h2 {
-    font-family: 'Arial', sans-serif;
+td {
+    background: linear-gradient(45deg, #d32f2f, #c62828);
+    color: #fff;
 }
 
-/* Additional styles for the footer */
+tr:nth-child(even) td {
+    background: linear-gradient(45deg, #616161, #757575);
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #424242;
+}
+
 .footer {
     text-align: center;
     margin-top: 20px;
     color: #888;
     font-size: 14px;
+} */
+
+
+/* //////////////////////// This One ///////////////////////*/
+
+.body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #cc3333; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 80%; 
+    max-width: 800px; 
+    text-align: center;
+    background: linear-gradient(45deg, #333333, #000000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family:'Times New Roman', Times, serif;
+}
+
+.content {
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #666666, #424242); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+th {
+    background: linear-gradient(45deg, #cc0000, #990000); 
+    color: #fff;
+    font-weight: bold;
+}
+
+td {
+    background: linear-gradient(45deg, #505050, #333333); 
+    color: #fff;
+}
+
+tr:nth-child(even) td {
+    background: linear-gradient(45deg, #999999, #666666); 
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #424242; 
+}
+
+.send-button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-collapse: separate;
 }
