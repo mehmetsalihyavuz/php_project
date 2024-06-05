@@ -7,7 +7,8 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "spatie/laravel-database-mail-templates": "^3.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
@@ -18,7 +19,8 @@
         "nunomaduro/collision": "^8.0",
         "pestphp/pest": "^2.34",
         "pestphp/pest-plugin-laravel": "^2.3",
-        "spatie/laravel-ignition": "^2.4"
+        "spatie/laravel-ignition": "^2.4",
+        "xammie/mailbook": "^1.8"
     },
     "autoload": {
         "psr-4": {

@@ -48,7 +48,6 @@ class JobPostedNotification extends Notification implements ShouldQueue
 
         /* $res = (new MailMessage)
             ->subject('About '. $job->title)
-
             ->theme('verify-styles');
 
         $res->markdown('vendor.notifications.verify', [
@@ -56,43 +55,35 @@ class JobPostedNotification extends Notification implements ShouldQueue
             'url' => $url,
             
         ]);  */
-        
+
 
         // Licences That Expire Table
+        
 
         $res = (new MailMessage)
-        ->subject('Licences That Will Expire Soon') 
-        /* ->theme('mail-styles') */;
+        ->subject('Licences That Expire Table') 
+        ->theme('table-styles');
 
-        /*  $res->markdown('vendor.notifications.license-that-expire', [
-            'job' => $job,
-            'url' => $url,
-
-        ]);  */
-
-        $res->markdown('vendor.notifications.def', [
+        $res->markdown('vendor.notifications.may11', [
             'job' => $job,
             'url' => $url,
         ]); 
         
         return $res;
 
+        
         /* $res = (new MailMessage)
-        ->subject('Licences That Will Expire Soon')  */
-        /* ->theme('mail-styles') */;
+        ->subject('Licences That Will Expire Soon')
+        ->theme('mail-styles') */
+        ;
 
         /*  $res->markdown('vendor.notifications.license-that-expire', [
             'job' => $job,
             'url' => $url,
 
-        ]);  */
+        ]);  
 
-        /* $res->markdown('vendor.notifications.abc', [
-            'job' => $job,
-            'url' => $url,
-        ]); 
-        
-        return $res;  */
+         return $res; */ 
 
     }
 
