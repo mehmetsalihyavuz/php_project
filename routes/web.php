@@ -67,3 +67,5 @@ Route::patch('/phones/featurephone/{featurephone}', [FeaturePhoneController::cla
 Route::get('/contact/smartphone/{user}', [ContactPageController::class, 'smartphone'])->name('my-smartphone');
 Route::get('/contact/featurephone/{user}', [ContactPageController::class, 'featurephone'])->name('my-featurephone');
 Route::get('/contact/landlinephone/{user}', [ContactPageController::class, 'landlinephone'])->name('my-landlinephone');
+
+Route::get('/sendmail',[JobController::class, 'sendingmail'])->name('sendingmail');

@@ -6,6 +6,7 @@ use App\Models\Phones\SmartPhone;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
@@ -70,20 +71,6 @@ class JobPostedNotification extends Notification implements ShouldQueue
         ]); 
         
         return $res;
-
-        
-        /* $res = (new MailMessage)
-        ->subject('Licences That Will Expire Soon')
-        ->theme('mail-styles') */
-        ;
-
-        /*  $res->markdown('vendor.notifications.license-that-expire', [
-            'job' => $job,
-            'url' => $url,
-
-        ]);  
-
-         return $res; */ 
 
     }
 

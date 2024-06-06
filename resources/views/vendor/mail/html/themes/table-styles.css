@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .primary-body {
     display: block;
     padding: 0;
@@ -25,6 +27,7 @@
     padding: 1rem;
     text-align: center;
     text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
 }
 
 .divider {
@@ -55,6 +58,7 @@ th {
     padding: 10px;
     text-align: center;
     font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 th {
@@ -74,8 +78,8 @@ th {
 .logo {
     display: block;
     margin: 0 auto;
-    height: auto;
-    width: 141px !important;
+    height: 80px;
+    width: 165px !important;
 }
 
 @media (max-width: 768px) {
@@ -95,6 +99,7 @@ th {
     }
 
     .logo {
+        height: 65px;
         width: 100px !important;
         margin: 0 auto 10px auto;
     }
@@ -117,6 +122,7 @@ th {
     }
 
     .logo {
+        height: 45px;
         width: 85px !important;
         margin: 0 auto 5px auto;
     }

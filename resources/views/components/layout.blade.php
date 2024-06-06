@@ -26,7 +26,8 @@
                                 <x-nav-link href="/jobs" :active="request()->is('about')">Jobs</x-nav-link>
                                 <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
                                 <x-nav-link href="/users" :active="request()->is('users')">Users</x-nav-link> 
-                                <x-nav-link href="/phones" :active="request()->is('phones')">Phones</x-nav-link> 
+                                <x-nav-link href="/phones" :active="request()->is('phones')">Phones</x-nav-link>
+                                <x-nav-link href="/sendmail" :active="request()->is('sendmail')">Send Mail</x-nav-link> 
                             </div>
                         </div>
                     </div>

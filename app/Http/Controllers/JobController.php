@@ -30,7 +30,7 @@ class JobController extends Controller
     public function index()
     {
         $jobs = Job::with('employer')->latest()->simplePaginate(3);
-
+        
         return view('jobs.index', [
             'jobs' => $jobs
         ]);
@@ -104,6 +104,17 @@ class JobController extends Controller
 
         return redirect('/jobs/' . $job->id);
     }
+
+    /* public function sendingmail(){
+        
+        $user = Auth::user();
+
+        $job = Job::all();
+
+        Notification::route('mail', $user->email)->notify(new JobPostedNotification($job));
+
+        return view('sendmail');
+    } */
 
     public function destroy(Job $job)
     {
