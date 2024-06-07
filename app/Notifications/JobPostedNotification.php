@@ -21,7 +21,12 @@ class JobPostedNotification extends Notification implements ShouldQueue
     /**
      * Create a new notification instance.
      */
-    public function __construct(Job $job)
+    /* public function __construct(Job $job)
+    {
+        $this->job = $job;
+    } */
+
+    public function __construct(Collection $job)
     {
         $this->job = $job;
     }
@@ -58,14 +63,32 @@ class JobPostedNotification extends Notification implements ShouldQueue
         ]);  */
 
 
+
+
+
         // Licences That Expire Table
         
-
-        $res = (new MailMessage)
+       /*  $res = (new MailMessage)
         ->subject('Licences That Expire Table') 
         ->theme('table-styles');
 
         $res->markdown('vendor.notifications.may11', [
+            'job' => $job,
+            'url' => $url,
+        ]); 
+        
+        return $res; */
+
+
+         // Licences That Expire Blue Table
+
+        
+
+        $res = (new MailMessage)
+        ->subject('Licences That Expire Table') 
+        ->theme('blue-table-styles');
+
+        $res->markdown('vendor.notifications.may12', [
             'job' => $job,
             'url' => $url,
         ]); 

@@ -69,7 +69,7 @@ class JobController extends Controller
             new JobPosted($job)
         ); */
 
-        Notification::route('mail', $user->email)->notify(new JobPostedNotification($job));
+        /* Notification::route('mail', $user->email)->notify(new JobPostedNotification($job)); */
 
         return redirect('/jobs');
     }
@@ -105,7 +105,7 @@ class JobController extends Controller
         return redirect('/jobs/' . $job->id);
     }
 
-    /* public function sendingmail(){
+    public function sendingmail(){
         
         $user = Auth::user();
 
@@ -114,7 +114,7 @@ class JobController extends Controller
         Notification::route('mail', $user->email)->notify(new JobPostedNotification($job));
 
         return view('sendmail');
-    } */
+    }
 
     public function destroy(Job $job)
     {
