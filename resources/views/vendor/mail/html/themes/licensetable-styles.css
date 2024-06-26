@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Open+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Courier+New:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Open+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&family=Georgia:wght@400;700&family=Trebuchet+MS:wght@400;700&display=swap');
+
 .primary-body {
     display: block;
     padding: 0;
     margin: 0;
-    font-family: 'Baloo 2', 'Open Sans', 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Arial, monospace, sans-serif;
+    /* font-family: 'Baloo 2', 'Open Sans', 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Arial, monospace, sans-serif; */
     min-height: fit-content;
     background-color: #f4f4f9;
 }
@@ -43,7 +47,8 @@
 
 .table-header {
     background-color: #941323;
-    font-family: 'Baloo 2', 'Open Sans', 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, Tahoma, Arial, monospace, sans-serif;
+    font-family:Arial, sans-serif;
+    text-transform: capitalize;
     color: #fff;
     padding: 27px;
     text-align: center;
@@ -65,22 +70,19 @@
     width: 100%;
     border-collapse: collapse;
     /* table-layout: auto;  */
-    /* ------------------- ADDED ----------------*/
 }
 
 .table-users th,
 .table-users td {
-    /* padding: 14px 16px; */
-    /* margin: 5px 7px; */
     text-align: center;
     border-bottom: 1px solid #ddd;
     color: #444;
     word-wrap: normal;
-    /* ------------------- ADDED ----------------*/
+
 }
 
 .table-users th {
-    /* padding: 15px 15px 15px 15px; */
+    font-family: 'Trebuchet MS', sans-serif;
     padding: 15px 10px;
     font-size: 13px;
     font-weight: 500 !important;
@@ -88,7 +90,7 @@
 }
 
 .table-users td {
-    /* padding: 17px 17px 17px 17px; */
+    font-family: 'Open Sans', sans-serif;
     padding: 17px 10px;
     font-size: 13px;
     font-weight: 300 !important;

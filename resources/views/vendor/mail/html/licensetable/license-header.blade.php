@@ -1,3 +1,4 @@
-<div>
-    <h2 class="heading-section">Licenses That Will Expire In A Week</h2>
+<div class="divider"></div>
+<div class="table-header">
+    <span>7 gün İçinde sertifikası sona erecek internal sertifikalar</span>
 </div>

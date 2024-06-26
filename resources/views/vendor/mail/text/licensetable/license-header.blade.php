@@ -1,3 +1,6 @@
-<div>
-    <h2 class="heading-section">Licenses That Will Expire In A Week</h2>
-</div>
+{{-- <div class="divider"></div>
+<div class="table-header">
+    <span>7 GUN ICINDE SERTIFIKASI SONA ERECEK INTERNAL SERTIFIKALAR</span>
+</div> --}}
+
+{{$slot}}

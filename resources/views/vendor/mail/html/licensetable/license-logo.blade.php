@@ -1,23 +1,3 @@
-<x-mail::bluetable.blue-layout>
+<img src="https://imgur.com/vZlw17g.png" alt="Logo" class="logo">
 
-    <x-slot:header>
-        <x-mail::bluetable.blue-header>
-
-        </x-mail::bluetable.blue-header>
-
-    </x-slot:header>
-
-    <x-slot:table>
-        <x-mail::bluetable.blue-table :job="$job">
-
-        </x-mail::bluetable.blue-table>
-
-    </x-slot:table>
-
-    <x-slot:footer>
-        <x-mail::bluetable.blue-footer>
-
-        </x-mail::bluetable.blue-footer>
-    </x-slot:footer>
-    
-</x-mail::bluetable.blue-layout>
+{{-- <img src="https://www.bntpro.com/media/2022/09/SecTrail-CM-Logo1.png" alt="Logo" class="logo"> --}}

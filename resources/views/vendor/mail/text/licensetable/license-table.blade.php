@@ -1,4 +1,4 @@
-<div class="table-responsive">
+{{-- <div class="table-responsive">
     <table class="table-custom" id="myTable">
         <thead>
             <tr>
@@ -19,4 +19,6 @@
             @endforeach
         </tbody>
     </table>
-</div>
+</div> --}}
+
+{{$slot}}

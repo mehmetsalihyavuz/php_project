@@ -92,8 +92,9 @@ class JobPostedNotification extends Notification implements ShouldQueue
         return $res; */
 
         $res = (new MailMessage)
-        ->subject('Licenses That Expire Table');
-
+        ->subject('Licenses That Expire Table')
+        ->theme('licensetable-styles');
+        
         $res->markdown('vendor.notifications.deneme2', [
             'job' => $job,
         ]); 

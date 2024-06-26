@@ -250,7 +250,7 @@
 
 
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -513,11 +513,13 @@
 </body>
 
 </html>
+ --}}
 
 
 
+<x-mail::licensetable.license-message {{-- :job="$job" :url="$url" --}}>
 
-
+</x-mail::licensetable.license-message>
 
 
 
