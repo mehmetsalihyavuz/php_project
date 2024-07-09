@@ -11,7 +11,7 @@
 
 .second-body {
     width: 100%;
-    padding: 3px;
+    padding: 7px;
     box-sizing: border-box;
     background: linear-gradient(135deg, #eee, #ddd);
     display: flex;
@@ -24,7 +24,7 @@
     margin: 0 auto;
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 8px;
+    /* padding: 8px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
@@ -159,14 +159,18 @@
 } */
 
 @media (max-width: 1080px) {
+
+    .second-body {
+        width: fit-content !important;
+    }
     .container {
         padding: 0 !important;
     }
 
     .table-users th,
     .table-users td {
-        padding: 8px 9px;
-        font-size: 11px;
+        padding: 12.96px 14.04px;
+        font-size: 15.12px;
     }
 
     .table-header {
