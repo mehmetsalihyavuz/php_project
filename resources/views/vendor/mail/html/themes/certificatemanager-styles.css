@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Courier+New:wght@400;700&display=swap');
+
+.primary-body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    /* min-height: fit-content; */
+    width: fit-content;
+    background-color: #f4f4f9;
+}
+
+.second-body {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #eee, #ddd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.logo-divider {
+    display: flex;
+    align-items: center;
+    width: 100% !important;
+}
+
+.logo1 {
+    margin: 20px 0px;
+    width: 90px !important;
+    height: 50px !important;
+}
+
+.logo2 {
+    width: 132px;
+    height: 100px !important;
+    margin: auto auto 20px auto;
+}
+
+.divider-line {
+    width: 100%;
+    flex-grow: 1;
+    height: 2px;
+    background-color: #1b3057;
+    margin: 40px 15px;
+}
+
+.table-header {
+    max-width: 100%;
+    background-color: #1b3057;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+    font-size: 13px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.table-users {
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.table-users table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-users th,
+.table-users td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #444;
+    word-wrap: normal;
+    /* overflow: hidden; */
+}
+
+.table-users th {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    background-color: #708196;
+    color: #ebedef !important;
+    font-weight: 200 !important;
+    text-transform: capitalize;
+    /*letter-spacing: 0.1em;
+    position: relative;
+    top: 0;
+    z-index: 999; */
+}
+
+.table-users td {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300 !important;
+}
+
+.table-users th {
+    padding: 7pt 12pt !important;
+}
+
+.table-users td {
+    padding: 7pt 12pt !important;
+}
+
+.table-users th,
+.table-users td {
+    border-right: 2px solid #fff;
+}
+
+.table-users tr {
+    border-bottom: 2px solid #fff;
+}
+
+.table-users tbody td {
+    border-right: 2px solid #fff;
+}
+
+.table-users tbody tr {
+    background-color: #f7f7f7;
+}
+
+.table-users thead th {
+    border-top: 2px solid #fff;
+}
+
+.table-users tbody td:first-child {
+    border-left: 3px #ddd;
+}
+
+.table-users tbody td:last-child {
+    border-right: none;
+}
+
+.table-users thead th:last-child {
+    border-right: none;
+}
+
+/* .table-users tbody td:nth-child(3){
+    padding:  1pt  !important;
+}
+
+.table-users tbody td:nth-child(5){
+    padding:  1pt !important;
+} */
+
+@media (max-width: 1080px) {
+    .container {
+        padding: 0 !important;
+    }
+
+    .table-users th,
+    .table-users td {
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .table-header {
+        padding: 0 !important;
+        text-align: left !important;
+        font-size: 8px !important;
+    }
+
+    .divider-line {
+        width: 100%;
+    }
+
+    .logo1 {
+        width: 129.6px;
+        height: 129.6px;
+    }
+
+    .logo2 {
+        width: 20%;
+        height: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .second-body {
+        width: fit-content !important;
+    }
+    .container {
+        padding: 0 !important;
+    }
+
+    .table-users th,
+    .table-users td {
+        padding: 6.912px 5.376px;
+        font-size: 5.376px;
+    }
+
+    .table-header {
+        padding: 0 !important;
+        text-align: left !important;
+        font-size: 5px !important;
+    }
+
+    .divider-line {
+        width: 100%;
+    }
+
+    .logo1 {
+        padding: 2px !important;
+        width: 20% !important;
+        height: 20% !important;
+    }
+
+    .logo2 {
+        width: 20% !important;
+        height: 10% !important;
+    }
+}
+

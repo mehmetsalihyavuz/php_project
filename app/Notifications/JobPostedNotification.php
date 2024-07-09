@@ -77,7 +77,7 @@ class JobPostedNotification extends Notification implements ShouldQueue
         return $res; */
 
 
-         // Licences That Expire Blue Table
+         // Licenses That Expire Blue Table
 
         
         /* $res = (new MailMessage)
@@ -91,11 +91,27 @@ class JobPostedNotification extends Notification implements ShouldQueue
         
         return $res; */
 
-        $res = (new MailMessage)
+
+        //7 Gün İçinde Sertifikası Sona Erecek Internal Sertifikalar
+
+       /*  $res = (new MailMessage)
         ->subject('Licenses That Expire Table')
         ->theme('licensetable-styles');
         
         $res->markdown('vendor.notifications.deneme2', [
+            'job' => $job,
+        ]); 
+        
+        return $res; */
+
+
+        // Certificate Manager Table
+
+        $res = (new MailMessage)
+        ->subject('CM Table')
+        ->theme('certificatemanager-styles');
+        
+        $res->markdown('vendor.notifications.certificatemanager', [
             'job' => $job,
         ]); 
         

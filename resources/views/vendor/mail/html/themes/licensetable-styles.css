@@ -35,24 +35,24 @@
     display: block;
     margin: 0 auto 20px;
     width: 130px !important;
-    height: 65px !important;
+    height: 130px !important;
     pointer-events: none;
 }
 
 .divider {
     height: 2px;
-    background-color: #941323;
+    background-color: #1b3057;
     margin: 20px 0;
 }
 
 .table-header {
-    background-color: #941323;
+    background-color: #1b3057;
     font-family:Arial, sans-serif;
     text-transform: capitalize;
     color: #fff;
-    padding: 27px;
+    padding: 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -82,15 +82,15 @@
 }
 
 .table-users th {
-    font-family: 'Trebuchet MS', sans-serif;
-    padding: 15px 10px;
+    font-family: Arial, sans-serif;
+    padding: 13px 9px;
     font-size: 13px;
     font-weight: 500 !important;
     color: #000000 !important;
 }
 
 .table-users td {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, sans-serif;
     padding: 17px 10px;
     font-size: 13px;
     font-weight: 300 !important;
@@ -105,9 +105,9 @@
     z-index: 999;
 }
 
-.table-users tbody tr:nth-child(even) {
+/* .table-users tbody tr:nth-child(even) {
     background-color: #f9f9f9;
-}
+} */
 
 @media (max-width: 1080px) {
     .container {
@@ -131,8 +131,8 @@
     }
 
     .logo {
-        width: 65px !important;
-        height: 30px !important;
+        width: 90px !important;
+        height: 90px !important;
     }
 }
 
@@ -154,7 +154,7 @@
 
     .logo {
         width: 50px !important;
-        height: 25px !important;
+        height: 50px !important;
     }
 }
 
@@ -175,7 +175,7 @@
     }
 
     .logo {
-        width: 40px !important;
-        height: 20px !important;
+        width: 25px !important;
+        height: 25px !important;
     }
 }
